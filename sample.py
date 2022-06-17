@@ -11,10 +11,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 import plotly.graph_objects as go
-
+import time
+from PIL import Image
+from classify import predict
 
 st.title("DUNGEONS & DRAGONS CURRENCY CALCULATOR")
-
+image = Image.open("images/imagee.jpg")
+st.image(image,use_column_width=True)
 st.subheader('please input the number of coins you have for each coin type')
 cu=1/100
 sil=1/10
@@ -50,4 +53,7 @@ a=pd.DataFrame(s)
 st.dataframe(data=a)
 
 st.bar_chart(data=a)
+st.line_chart(a)
+st.area_chart(a)
+
 
